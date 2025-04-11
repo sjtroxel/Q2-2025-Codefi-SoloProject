@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "q2ProjectMusicalInstruments": {
+    "q2MusicalInstrumentsSoloProject": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/q2-project-musical-instruments",
+            "outputPath": "dist/q2-musical-instruments-solo-project",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "q2ProjectMusicalInstruments:build:production"
+              "buildTarget": "q2MusicalInstrumentsSoloProject:build:production"
             },
             "development": {
-              "buildTarget": "q2ProjectMusicalInstruments:build:development"
+              "buildTarget": "q2MusicalInstrumentsSoloProject:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
