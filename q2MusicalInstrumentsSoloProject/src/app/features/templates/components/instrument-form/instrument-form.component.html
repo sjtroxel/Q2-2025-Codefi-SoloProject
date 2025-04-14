@@ -1,1 +1,47 @@
-<p>instrument-form works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input formControlName="name" type="text" />
+  </label>
+
+  <label>
+    Family:
+    <select formControlName="family">
+      <option value="brass">Brass</option>
+      <option value="woodwind">Woodwind</option>
+      <option value="percussion">Percussion</option>
+      <option value="string">String</option>
+      <option value="keyboard">Keyboard</option>
+    </select>
+  </label>
+
+  <label>
+    Brand:
+    <input formControlName="brand" type="text" />
+  </label>
+
+  <label>
+    Serial Number:
+    <input formControlName="serialNumber" type="text" />
+  </label>
+
+  <label>
+    Condition:
+    <select formControlName="condition">
+      <option value="new">New</option>
+      <option value="excellent">Excellent</option>
+      <option value="good">Good</option>
+      <option value="fair">Fair</option>
+      <option value="very poor">Very Poor</option>
+    </select>
+  </label>
+
+  <label>
+    Notes:
+    <textarea formControlName="notes"></textarea>
+  </label>
+
+  <button type="submit">
+    {{ editing ? 'Update' : 'Add' }} Instrument
+  </button>
+</form>

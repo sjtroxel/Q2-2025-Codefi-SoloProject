@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 
 @Component({
   selector: 'app-instrument-item',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './instrument-item.component.css'
 })
 export class InstrumentItemComponent {
-
+  
 }
