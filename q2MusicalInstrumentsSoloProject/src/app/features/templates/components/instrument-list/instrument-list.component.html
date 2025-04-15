@@ -1,6 +1,32 @@
+<button (click)="openModal()">Add New Instrument</button>
+<button>Edit Instrument</button>
+<button>Delete Instrument</button>
 <div>
-  @for (instrument of instruments(); track instruments.id) {
-    <app-instrument-item []
+  @for (instrument of instruments(); track instrument.id) {
+      <div>
+        <hr>
+        <p class="type">Instrument Type: {{ instrument.type }}</p>
+        <p class="family">Instrument Family: {{ instrument.family }}</p>
+        <p class="brand">Brand: {{ instrument.brand }}</p>
+        <p class="serialNumber">Serial Number: {{ instrument.serialNumber }}</p>
+        <p class="condition">Condition: {{ instrument.condition }}</p>
+        <p class="notes">Notes: {{ instrument.notes }}</p>
+      </div>
+
+    <!-- <app-instrument-item></app-instrument-item> [] -->
   }
 </div>
+
+@if (showForm()) {
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="modal">
+<button class="close-btn" (click)="closeModal()">X</button>
+<h2>Add New Instrument</h2>
+<app-instrument-form />
+
+
+</div>
+
+
+}
 

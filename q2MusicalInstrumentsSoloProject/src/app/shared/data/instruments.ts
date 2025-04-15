@@ -1,4 +1,6 @@
-export default [
+import { Instrument } from "../models/instrument.model"
+
+export const instrumentsList: Instrument[] = [
   {
     id: 1,
     type: 'clarinet',
@@ -98,5 +100,6 @@ export default [
     condition: 'very poor',
     notes: ''
   },
+  
 ]
 

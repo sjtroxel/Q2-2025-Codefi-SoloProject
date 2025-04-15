@@ -1,12 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 import { Instrument } from '../models/instrument.model';
-import DUMMY_DATA from '../data/instruments';
+import { instrumentsList } from '../data/instruments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InstrumentService {
-  instruments = signal<Instrument[]>(DUMMY_DATA);
+  instruments = signal<Instrument[]>(instrumentsList);
+  submittedInstrument = signal<Partial<Instrument> | null>(null);
+
 
 getInstruments() {
   return this.instruments.asReadonly;
@@ -15,10 +17,10 @@ getInstruments() {
 addInstrument(
   id: number,
   t: string,
-  f: string,
+  f: 'brass' | 'woodwind' | 'percussion' | 'stringInstrument' | 'keyboard',
   b: string,
   sn: string,
-  c: string,
+  c: 'new' | 'excellent' | 'good' | 'fair' | 'very poor',
   n: string,
  ) {
   this.instruments.update(i => [...i,
@@ -28,5 +30,8 @@ addInstrument(
  deleteInstrument(id: number) {
   this.instruments.update(current => current.filter(instr => instr.id !==id));
  }
+resetSubmittedInstrument(){
+  this.submittedInstrument.set(null);
+}
 }
 
