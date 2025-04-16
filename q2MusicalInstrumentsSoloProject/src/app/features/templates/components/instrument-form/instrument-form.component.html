@@ -44,5 +44,10 @@
   <!-- <button type="submit">
     {{ editing ? 'Update' : 'Add' }} Instrument
   </button> -->
-  <button type="submit">Add Instrument</button>
+  <button type="submit">
+    @if (instrumentService.instrumentToEdit()) {
+      Edit Instrument
+    } @else {
+    Add New Instrument}
+  </button>
 </form>

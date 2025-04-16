@@ -1,27 +1,36 @@
-<button (click)="openModal()">Add New Instrument</button>
-<button>Edit Instrument</button>
-<button>Delete Instrument</button>
+<button (click)="openModal()">
+  Add New Instrument
+</button>
+
 <div>
   @for (instrument of instruments(); track instrument.id) {
       <div>
-        <hr>
+      <hr>
+        <button (click)="editInstrument(instrument)">Edit Instrument</button>
         <p class="type">Instrument Type: {{ instrument.type }}</p>
         <p class="family">Instrument Family: {{ instrument.family }}</p>
         <p class="brand">Brand: {{ instrument.brand }}</p>
         <p class="serialNumber">Serial Number: {{ instrument.serialNumber }}</p>
         <p class="condition">Condition: {{ instrument.condition }}</p>
         <p class="notes">Notes: {{ instrument.notes }}</p>
+        <button (click)="deleteInstrument(instrument.id)">Delete Instrument</button>
       </div>
-
-    <!-- <app-instrument-item></app-instrument-item> [] -->
-  }
+    }
 </div>
+    <!-- <app-instrument-item></app-instrument-item> [] -->
+
+
 
 @if (showForm()) {
 <div class="modal-backdrop" (click)="closeModal()"></div>
 <div class="modal">
 <button class="close-btn" (click)="closeModal()">X</button>
-<h2>Add New Instrument</h2>
+<h2>
+  @if (instrumentService.instrumentToEdit()) {
+    Edit Instrument
+  } @else {
+  Add New Instrument}
+</h2>
 <app-instrument-form />
 
 
