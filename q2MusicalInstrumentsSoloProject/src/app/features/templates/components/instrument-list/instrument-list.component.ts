@@ -1,6 +1,6 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { InstrumentService } from '../../../../shared/services/instrument.service';
-import { InstrumentItemComponent } from '../instrument-item/instrument-item.component';
+// import { InstrumentItemComponent } from '../instrument-item/instrument-item.component';
 import { SharedModule } from '../../../../shared/shared-module';
 import { InstrumentFormComponent } from '../instrument-form/instrument-form.component';
 import { Instrument } from '../../../../shared/models/instrument.model';
@@ -9,8 +9,8 @@ import { Instrument } from '../../../../shared/models/instrument.model';
   selector: 'app-instrument-list',
   standalone: true,
   imports:
-  [InstrumentItemComponent,
-     SharedModule, InstrumentFormComponent],
+  // [InstrumentItemComponent,
+     [SharedModule, InstrumentFormComponent],
   templateUrl: './instrument-list.component.html',
   styleUrl: './instrument-list.component.css'
 })

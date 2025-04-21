@@ -1,37 +1,93 @@
+/* 🌟 Base button style */
+button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin: 0.3rem;
+}
+
+/* ➕ Add button */
+button.add {
+
+  color: white;
+  background-color: green;
+}
+
+button.add:hover {
+  background: linear-gradient(to right, #45a049, #2e7d32);
+  transform: scale(1.03);
+}
+
+/* ✏️ Edit button */
+button.edit {
+  background: linear-gradient(to right, #2196f3, #1e88e5); /* blue gradient */
+  color: white;
+}
+
+button.edit:hover {
+  background: linear-gradient(to right, #1e88e5, #1565c0);
+  transform: scale(1.03);
+}
+
+/* 🗑️ Delete button */
+button.delete {
+  background: linear-gradient(to right, #f44336, #d32f2f); /* red gradient */
+  color: white;
+}
+
+button.delete:hover {
+  background: linear-gradient(to right, #e53935, #b71c1c);
+  transform: scale(1.03);
+}
+
+.modal-title {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 2rem;
+}
+
 /* 🔳 Dark background overlay behind the modal */
 .modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-    z-index: 10;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
 
-  /* 🪟 Modal box itself */
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* center it */
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    z-index: 11;
-  }
+/* 🪟 Smaller, more compact modal box */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #B8860B;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
 
-  /* ❌ Close button in the top-right corner */
-  .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: #333;
-  }
+/* ❌ Close button in the top-right corner */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #000;
+}
